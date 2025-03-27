@@ -2,38 +2,38 @@ trait PaymentStrategy {
     def pay(amount: Double): Unit // Interface for payment strategies
 }
 
-// Implementação da interface de pagamento -> Cartão de Crédito
+// Implementation of the payment interface -> Credit Card
 class CreditCardPayment(cardNumber: String, cvv: String, expiryDate: String) extends PaymentStrategy {
     override def pay(amount: Double): Unit = {
         println(s"Pagando $amount reais com cartao de credito de numero: $cardNumber")
-        // Implementação do pagamento com cartão de crédito
+        // Credit card payment implementation
     }
 }
 
-// Implementação da interface de pagamento -> Cartão de Débito
+// Implementation of the payment interface -> Debit Card
 class DebitCardPayment(cardNumber: String, pin: String) extends PaymentStrategy {
     override def pay(amount: Double): Unit = {
         println(s"Pagando $amount reais com cartao de debito de numero: $cardNumber")
-        // Implementação do pagamento com cartão de débito
+        // Debit card payment implementation
     }
 }
 
-// Implementação da interface de pagamento -> Cartão de Débito
+// Implementation of the payment interface -> Pix
 class PixPayment(pixKey: String) extends PaymentStrategy {
     override def pay(amount: Double): Unit = {
         println(s"Pagando $amount reais com chave pix: $pixKey")
-        // Implementação do pagamento com pix
+        // Pix payment implementation
     }
 }
 
-// Classe que utiliza a estratégia de pagamento
+// Class that uses the strategy to process payments
 class PaymentProcessor(){
     def processPayment(amount: Double, paymentStrategy: PaymentStrategy): Unit = {
         paymentStrategy.pay(amount)
     }
 }
 
-// Exemplo de uso
+// Use example
 object Main{
     def main(args: Array[String]): Unit = {
         val processor = new PaymentProcessor()
