@@ -5,7 +5,7 @@ trait PaymentStrategy {
 // Implementation of the payment interface -> Credit Card
 class CreditCardPayment(cardNumber: String, cvv: String, expiryDate: String) extends PaymentStrategy {
     override def pay(amount: Double): Unit = {
-        println(s"Pagando $amount reais com cartao de credito de numero: $cardNumber")
+        println(s"Paying $amount reais with credit card, number: $cardNumber")
         // Credit card payment implementation
     }
 }
@@ -13,7 +13,7 @@ class CreditCardPayment(cardNumber: String, cvv: String, expiryDate: String) ext
 // Implementation of the payment interface -> Debit Card
 class DebitCardPayment(cardNumber: String, pin: String) extends PaymentStrategy {
     override def pay(amount: Double): Unit = {
-        println(s"Pagando $amount reais com cartao de debito de numero: $cardNumber")
+        println(s"Paying $amount reais with debit card, number: $cardNumber")
         // Debit card payment implementation
     }
 }
@@ -21,7 +21,7 @@ class DebitCardPayment(cardNumber: String, pin: String) extends PaymentStrategy 
 // Implementation of the payment interface -> Pix
 class PixPayment(pixKey: String) extends PaymentStrategy {
     override def pay(amount: Double): Unit = {
-        println(s"Pagando $amount reais com chave pix: $pixKey")
+        println(s"Paying $amount reais with pix key: $pixKey")
         // Pix payment implementation
     }
 }
