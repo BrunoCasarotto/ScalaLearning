@@ -1,4 +1,4 @@
-class dataStructures{
+class DataStructures{
 
     // List
     val list = List(1, 2, 3, 4, 5)
@@ -10,6 +10,10 @@ class dataStructures{
     val resversedList = list.reverse // List(5, 4, 3, 2, 1)
     val sortedList = list.sorted // Sort list in ascending order
     val sortedListDescending = list.sorted(Ordering[Int].reverse) // Sort list in descending order
+    val headOfList = list.head // Returns first element of the list - head
+    val lastOfList = list.last // Returns last element of the list - last
+    val initOfList = list.init // Returns all elements of the list except the last one - init
+    val tailOfList = list.tail // Returns all elements of the list except the first one - tail
 
     // Set
     val set = Set(1, 2, 3, 4, 5)
@@ -29,13 +33,13 @@ class dataStructures{
     
     // Tuple
     val pair = ("hello", 42)
-    val first = pair._1  // "hello"
-    val second = pair._2  // 42
+    val first = pair._1  // Returns "hello"
+    val second = pair._2  // Returns 42
     
     // Option
     val someValue: Option[Int] = Some(42)
     val noValue: Option[Int] = None
-    val extractedValue = someValue.getOrElse(0)  // 42
+    val extractedValue = someValue.getOrElse(0)  // Returns 42
     
     // Array
     val array = Array(1, 2, 3, 4, 5)

@@ -56,7 +56,7 @@ trait DefaultUserServiceComponent extends UserServiceComponent {
         def getUser(id: String): Option[User] = {
             userRepository.findByUserId(id)
         }
-
+        
         def createUser(name: String): User = {
             val user = User("Test", name)
             userRepository.save(user)
@@ -65,6 +65,7 @@ trait DefaultUserServiceComponent extends UserServiceComponent {
 
     // Concrete implementation
     val userService: UserService = new DefaultUserService
+
 }
 
 // 3 - The toping of the "cake" - where it combines all the components
