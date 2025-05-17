@@ -6,7 +6,7 @@ object Solution {
     // Get the sign of the number
     val sign = if (x < 0) -1 else 1
     
-    // Convert to positive for processing (use Long to avoid immediate overflow)
+    // Convert to positive for processing
     var num = math.abs(x.toLong)
     var result: Long = 0
     
