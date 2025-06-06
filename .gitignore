@@ -3,3 +3,6 @@
 .metals
 .bsp
 WebApplicationTest.sln
+target
+project
+.bloop
