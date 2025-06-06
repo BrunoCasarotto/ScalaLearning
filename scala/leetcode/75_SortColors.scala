@@ -1,24 +1,18 @@
 object Solution {
     def sortColors(nums: Array[Int]): Unit = {
-        // Dutch National Flag algorithm
-        // Use three pointers: left, mid, and right
-        var left = 0          // for 0s (red)
-        var mid = 0           // current position
-        var right = nums.length - 1  // for 2s (blue)
+        var left = 0
+        var mid = 0
+        var right = nums.length - 1 
         
         while (mid <= right) {
             nums(mid) match {
-                case 0 => // Red
-                    // Swap with left pointer and advance both left and mid
+                case 0 =>
                     swap(nums, left, mid)
                     left += 1
                     mid += 1
-                case 1 => // White
-                    // Just advance mid pointer
+                case 1 =>
                     mid += 1
-                case 2 => // Blue
-                    // Swap with right pointer and decrease right
-                    // Don't increment mid yet as we need to check the swapped value
+                case 2 =>
                     swap(nums, mid, right)
                     right -= 1
             }
